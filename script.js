@@ -59,6 +59,6 @@ function game() {
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
 
-        playRound();
+        console.log(playRound(playerChoice, computerChoice));
     }
 }
