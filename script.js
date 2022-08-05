@@ -12,3 +12,35 @@ function getComputerChoice() {
             return "Scissors";
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    switch (playerSelection) {
+        case "Rock":
+            if (computerSelection == "Rock") {
+                return "Draw - Rock vs rock";
+            } else if (computerSelection == "Paper") {
+                return "Lose - Rock smothered by paper";
+            } else {
+                return "Win - Rock smashes scissors";
+            }
+        case "Paper":
+            if (computerSelection == "Rock") {
+                return "Win - Paper smothers rock";
+            } else if (computerSelection == "Paper") {
+                return "Draw - Paper vs paper";
+            } else {
+                return "Lose - Paper cut by scissors";
+            }
+        case "Scissors":
+            if (computerSelection == "Rock") {
+                return "Lose - Scissors smashed by rock";
+            } else if (computerSelection == "Paper") {
+                return "Win - Scissors cut paper";
+            } else {
+                return "Draw - Scissors vs scissors";
+            }
+    
+        default:
+            return "Input invalid"
+    }
+}
