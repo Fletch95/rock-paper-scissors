@@ -3,44 +3,62 @@ function getComputerChoice() {
 
     switch (rnd) {
         case 0:
-            return "Rock";
+            return "rock";
 
         case 1:
-            return "Paper";
+            return "paper";
 
         case 2:
-            return "Scissors";
+            return "scissors";
     }
 }
 
+function getPlayerChoice() {
+    let playerInput = prompt("Enter Rock, Paper or Scissors");
+    return playerInput;
+}
+
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection) {
-        case "Rock":
-            if (computerSelection == "Rock") {
+    let lowerPlayerSelection = playerSelection.toLowerCase();
+
+    switch (lowerPlayerSelection) {
+        case "rock":
+            if (computerSelection == "rock") {
                 return "Draw - Rock vs rock";
-            } else if (computerSelection == "Paper") {
+            } else if (computerSelection == "paper") {
                 return "Lose - Rock smothered by paper";
-            } else if (computerSelection == "Scissors") {
+            } else if (computerSelection == "scissors") {
                 return "Win - Rock smashes scissors";
             }
-        case "Paper":
-            if (computerSelection == "Rock") {
+        case "paper":
+            if (computerSelection == "rock") {
                 return "Win - Paper smothers rock";
-            } else if (computerSelection == "Paper") {
+            } else if (computerSelection == "paper") {
                 return "Draw - Paper vs paper";
-            } else if (computerSelection == "Scissors") {
+            } else if (computerSelection == "scissors") {
                 return "Lose - Paper cut by scissors";
             }
-        case "Scissors":
-            if (computerSelection == "Rock") {
+        case "scissors":
+            if (computerSelection == "rock") {
                 return "Lose - Scissors smashed by rock";
-            } else if (computerSelection == "Paper") {
+            } else if (computerSelection == "paper") {
                 return "Win - Scissors cut paper";
-            } else if (computerSelection == "Scissors") {
+            } else if (computerSelection == "scissors") {
                 return "Draw - Scissors vs scissors";
             }
     
         default:
-            return "Input invalid"
+            return "Input invalid";
+    }
+}
+
+function game() {
+
+    for (let i = 0; i < 5; i++) {
+        console.log(`Round ${i+1}!`)
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+
+        playRound();
     }
 }
