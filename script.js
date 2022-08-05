@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
                 return "Draw - Rock vs rock";
             } else if (computerSelection == "Paper") {
                 return "Lose - Rock smothered by paper";
-            } else {
+            } else if (computerSelection == "Scissors") {
                 return "Win - Rock smashes scissors";
             }
         case "Paper":
@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
                 return "Win - Paper smothers rock";
             } else if (computerSelection == "Paper") {
                 return "Draw - Paper vs paper";
-            } else {
+            } else if (computerSelection == "Scissors") {
                 return "Lose - Paper cut by scissors";
             }
         case "Scissors":
@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
                 return "Lose - Scissors smashed by rock";
             } else if (computerSelection == "Paper") {
                 return "Win - Scissors cut paper";
-            } else {
+            } else if (computerSelection == "Scissors") {
                 return "Draw - Scissors vs scissors";
             }
     
