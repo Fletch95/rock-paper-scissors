@@ -71,18 +71,42 @@ function playRound(event) {
     let result = getResult(event.target.textContent, getComputerChoice());
     displayResult(result);
     updateScore(result);
+
+    if (playerScore.textContent == 5 || computerScore.textContent == 5) {
+        declareWinner();
+    }
+}
+
+function declareWinner() {
+    
+
+    if (playerScore.textContent == 5) {
+        finalResult.textContent = "Player wins!";
+    } else {
+        finalResult.textContent = "Computer wins!";
+    }
+
+    buttons.forEach((button) => {
+        button.removeEventListener('click', playRound);
+    })
+
+    resetButton.toggleAttribute('hidden');
+        
 }
 
 const results = document.querySelector('.results');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
 const finalResult = document.querySelector('.finalResult');
+const resetButton = document.querySelector('.reset');
 
 const buttons = document.querySelectorAll('.playerSelection');
 
 buttons.forEach((button) => {
     button.addEventListener('click', playRound);
 });
+
+resetButton.addEventListener('click', () => location.reload())
 
 
 
