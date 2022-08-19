@@ -13,11 +13,6 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let playerInput = prompt("Enter Rock, Paper or Scissors");
-    return playerInput;
-}
-
 function playRound(playerSelection, computerSelection) {
     let lowerPlayerSelection = playerSelection.toLowerCase();
 
