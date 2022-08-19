@@ -67,6 +67,12 @@ function updateScore(result) {
     }
 }
 
+function playRound(event) {
+    let result = getResult(event.target.textContent, getComputerChoice());
+    displayResult(result);
+    updateScore(result);
+}
+
 const results = document.querySelector('.results');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
@@ -75,12 +81,7 @@ const finalResult = document.querySelector('.finalResult');
 const buttons = document.querySelectorAll('.playerSelection');
 
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        let result = getResult(button.textContent, getComputerChoice());
-        displayResult(result);
-        updateScore(result);
-
-    });
+    button.addEventListener('click', playRound);
 });
 
 
