@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let rnd = Math.floor(Math.random()*3);
+    let rnd = Math.floor(Math.random() * 3);
 
     switch (rnd) {
         case 0:
@@ -46,19 +46,28 @@ function playRound(playerSelection, computerSelection) {
             } else if (computerSelection == "scissors") {
                 return "Draw - Scissors vs scissors";
             }
-    
+
         default:
             return "Input invalid";
     }
 }
 
-function game() {
+// function game() {
 
-    for (let i = 0; i < 5; i++) {
-        console.log(`Round ${i+1}!`)
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
+//     for (let i = 0; i < 5; i++) {
+//         console.log(`Round ${i+1}!`)
+//         let playerChoice = getPlayerChoice();
+//         let computerChoice = getComputerChoice();
 
-        console.log(playRound(playerChoice, computerChoice));
-    }
-}
+//         console.log(playRound(playerChoice, computerChoice));
+//     }
+// }
+
+const buttons = document.querySelectorAll('.playerSelection');
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playRound(button.textContent, getComputerChoice()));
+    });
+});
